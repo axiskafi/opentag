@@ -1,10 +1,11 @@
 "use client";
 import React from "react";
 import UserAvatar from "../common/UserAvatar";
-import { ArrowBigUp, Flame, Search, Link as LinkIcon } from "lucide-react";
+import { ArrowBigUp, Flame, Search } from "lucide-react";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
 import { CustomUser } from "@/app/api/auth/[...nextauth]/authOptions";
+import AddPost from "../post/AddPost";
 export default function SidebarLinks() {
   const { data } = useSession();
   const user = data?.user as CustomUser;
@@ -34,10 +35,7 @@ export default function SidebarLinks() {
       <p className="my-2 font-bold text-muted-foreground">Contribute</p>
       <ul>
         <li>
-          <Link className="flex space-x-3 items-center mb-4" href={"/popular"}>
-            <LinkIcon className="w-5 h-5" />
-            <p>Submit Article</p>
-          </Link>
+          <AddPost />
         </li>
       </ul>
     </div>

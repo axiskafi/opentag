@@ -5,9 +5,14 @@ const nextConfig = {
             {
                 hostname: "localhost",
                 protocol: "http"
+            },
+            {
+                hostname: "*",
+                protocol: "https"
             }
         ]
-    }
+    },
+    reactStrictMode: false,
     // reactStrictMode: true,
     // images: {
     //     domains: ['localhost'], // Add your allowed domains here

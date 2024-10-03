@@ -7,3 +7,4 @@ export const REGISTER_URL = "/auth/register";
 export const LOGOUT_URL = "/auth/logout";
 
 export const UPDATE_PROFILE = "/update/profile";
+export const POST_URL = "/post";

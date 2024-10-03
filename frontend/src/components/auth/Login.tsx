@@ -33,8 +33,8 @@ export default function Login() {
       .post(CHECK_CREDENTIALS, authState)
       .then((res) => {
         setLoading(false);
-        const reponse = res.data;
-        if (reponse.status === 200) {
+        const resData = res.data;
+        if (resData.status === 200) {
           signIn("credentials", {
             email: authState.email,
             password: authState.password,
@@ -46,9 +46,9 @@ export default function Login() {
       })
       .catch((err) => {
         setLoading(false);
-        if (err.response?.status === 422) {
-          setErrors(err.response?.data.errors);
-        } else if (err.response?.status === 401) {
+        if (err.resData?.status === 422) {
+          setErrors(err.resData?.data.errors);
+        } else if (err.resData?.status === 401) {
           toast.error("Invalid Credentials");
         } else {
           toast.error("Something went wrong, please try again");
